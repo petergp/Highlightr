@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import UIKit
 
 #if os(OSX)
     import AppKit
