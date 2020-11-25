@@ -10,6 +10,8 @@ import Foundation
 
 #if os(OSX)
     import AppKit
+#else
+    import UIKit
 #endif
 
 /// Highlighting Delegate
@@ -147,7 +149,7 @@ open class CodeAttributedString : NSTextStorage
             {
                 let string = (self.string as NSString)
                 let range = string.paragraphRange(for: editedRange)
-                highlight(range)
+                highlight(NSRange(location: 0, length: string.length))
             }
         }
     }
