@@ -210,7 +210,8 @@ open class CodeAttributedString : NSTextStorage
     {
         highlightr.themeChanged =
             { [weak self] _ in
-                    self?.highlight(NSMakeRange(0, self.stringStorage.length))
+                    guard let strongSelf = self else { return }
+                    strongSelf.highlight(NSMakeRange(0, strongSelf.stringStorage.length))
             }
     }
     
